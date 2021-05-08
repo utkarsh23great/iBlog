@@ -1,0 +1,151 @@
+{%extends 'blog/basic.html' %}
+
+{%block title%}
+Home: iBlog
+{%endblock%}
+{%block body%}
+
+<html lang="en">
+<head>
+    <title>Home : iBlogs</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  padding: 80px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+}
+
+/* Increase the font size of the h1 element */
+.header h1 {
+  font-size: 40px;
+}
+
+
+/* Column container */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width:100%;
+  }
+}
+
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>iBlogs</h1>
+    <p>Your home for the best Blogs</p>
+</div>
+
+<div class="row">
+    <div class="side">
+        <h2>About us</h2>
+        <div><img src="https://cdn.wallpapersafari.com/81/69/MVhGJH.jpg" height="200" width="350"></div>
+        <p>We Are the Leading Bloggers..</p>
+        <h3>Recent Blogs</h3>
+        <p>Some Blogs from top Bloggers</p>
+        <div>
+            <figure><img
+                    src="https://cdn.wionews.com/sites/default/files/styles/story_page/public/2020/07/08/148729-new-112.jpg"
+                    width="300">
+                <figcaption>Sushant Singh Rajput</figcaption>
+            </figure>
+        </div>
+        <br>
+        <div>
+            <figure><img
+                    src="https://www.aljazeera.com/mritems/imagecache/mbdxxlarge/mritems/Images/2020/7/27/0bc312d1b94d44f3bab0c127da4ecc8b_18.jpg"
+                    width="300">
+                <figcaption>Rafale Jets from France</figcaption>
+            </figure>
+        </div>
+        <br><br>
+    </div>
+    <div class="main">
+        <h2>iBlogs Home</h2>
+        <h5>Day Founded : July 28, 2020</h5>
+        <div><img
+                src="data:image/jpeg;base64,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">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR-oj_Vi4vpcTjA9FHrEHfCu55viohgsgL4fw&usqp=CAU">
+        </div>
+        <p>We have Blogs on everything under the sun</p>
+        <p>Maybe we have a blog on the Sun too</p>
+        <br>
+        <h2>Trending Blog: Corona Virus/Chinese Virus</h2>
+        <h5>The Covid-19 Pandemic, Economic Crisis due to Worldwide Lockdowns</h5>
+        <div><img
+                src="https://www.who.int/images/default-source/health-topics/coronavirus/gettyimages-1203376093.tmb-1024v.png?Culture=en&sfvrsn=6e0c1bc7_6"
+                height="300"></div>
+        <p>Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.</p>
+        <p>Most people infected with the COVID-19 virus will experience mild to moderate respiratory illness and recover
+            without requiring special treatment. Older people, and those with underlying medical problems like
+            cardiovascular disease, diabetes, chronic respiratory disease, and cancer are more likely to develop serious
+            illness.</p>
+    </div>
+</div>
+
+<div class="footer">
+    <h2>iBlogs</h2>
+    <p>We provide best Worldwide Blogs</p>
+</div>
+
+</body>
+</html>
+
+{%endblock%}
